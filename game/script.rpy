@@ -2,12 +2,41 @@
 
 # Declara los personajes usados en el juego como en el ejemplo:
 
+#-----specific options----------------
+
+# Set default transition for show/hide
+define _scene_show_hide_transition = Dissolve(0.5)
+
+#---------images-----------------------------------------
 image i_player serious = At('lemuel serious', sprite_highlight('player'))
+image i_player wary = At('lemuel wary', sprite_highlight('player'))
+image i_player relax = At('lemuel relax', sprite_highlight('player'))
+image i_player happy = At('lemuel happy', sprite_highlight('player'))
+image i_player jumpy = At('lemuel jumpy', sprite_highlight('player'))
+image i_player angry = At('lemuel angry', sprite_highlight('player'))
 
 image i_camp worry = At('camp worry', sprite_highlight('campesino'))
 image i_camp neutral = At('camp neutral', sprite_highlight('campesino'))
 image i_camp help = At('camp help', sprite_highlight('campesino'))
 
+image i_maria happy = At('maria happy', sprite_highlight('maria'))
+
+image i_kid happy = At('kid happy', sprite_highlight('kid'))
+image i_kid scared = At('kid scared', sprite_highlight('kid'))
+
+image i_cha_old neutral = At('cha1 neutral', sprite_highlight('cha_old'))
+
+image i_cha_tam neutral = At('cha2 neutral', sprite_highlight('cha_tam'))
+
+image i_cha_hunt neutral = At('cha3 neutral', sprite_highlight('cha_hunt'))
+
+image i_dev neutral = At('dem neutral', sprite_highlight('devil'))
+image i_dev mad = At('dem mad', sprite_highlight('devil'))
+
+
+
+
+#--------------- characters----------------------
 define player_name = "Viajero"
 define campesino_name = "Campesino"
 define kid_name = "Niño"
@@ -15,13 +44,13 @@ define devil_name = "Voz"
 
 define p = Character("[player_name]", image='i_player', callback=name_callback, cb_name='player')
 define c = Character("[campesino_name]", image='i_camp', callback=name_callback, cb_name='campesino')
-define m = Character("Doña María")
-define n = Character("[kid_name]")
-define x1 = Character("Granjero Anciano")
-define x2 = Character("Tamborilero")
-define x3 = Character("Cazador")
-define z = Character("Izel")
-define d = Character("[devil_name]")
+define m = Character("Doña María", image='i_maria', callback=name_callback, cb_name='maria')
+define n = Character("[kid_name]", image='i_kid', callback=name_callback, cb_name='kid')
+define x1 = Character("Granjero Anciano", image='i_cha_old', callback=name_callback, cb_name='cha_old')
+define x2 = Character("Tamborilero", image='i_cha_tam', callback=name_callback, cb_name='cha_tam')
+define x3 = Character("Cazador", image='i_cha_hunt', callback=name_callback, cb_name='cha_hunt')
+define z = Character("Izel", image='i_izel', callback=name_callback, cb_name='izel')
+define d = Character("[devil_name]", image='i_dev', callback=name_callback, cb_name='devil')
 
 #----------------flags------------------------
 default x1_help = False

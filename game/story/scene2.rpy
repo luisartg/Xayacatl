@@ -1,22 +1,31 @@
 label scene2:
 
+    show i_player serious at center
     p """
     Quien diría que mi primer día en Ixtlahuacán sería buscando a un niño robado.
     
     Supongo que la maldad en el mundo no acaba por más que te alejes.
     """
+
     d "{i}Eso es una ley universal, {b}compadre.{/b}{/i}"
+
+    show i_player jumpy 
+    p "AAHH!!"
 
     """
     El corazón me da un vuelco al escuchar una voz detrás de mí. Me volteo rápidamente y veo a un hombre vestido de negro, casi imperceptible ya en la oscuridad de la entrada tarde.
     """
+
     $devil_name = "Hombre de Negro"
 
+    show i_player wary at left
+    show i_dev neutral at right 
     d """
     Perdone que le haya hecho brincar su alma, compadre. 
     
     Me dicen que tengo pies ligeros, ¿sabe? La gente nunca me escucha cuando me acerco.
     """
+
     p "Claro..."
 
     d """
@@ -52,6 +61,7 @@ label scene2:
 
     "El hombre en vestiduras negras me muestra 10 monedas de plata."
 
+    show i_player happy 
     p "¡Ah caray! ¿No me está bromeando usted?"
     
     d """¡No, como cree! Si yo nunca me hecho pa'trás con los tratos. 
@@ -60,6 +70,10 @@ label scene2:
 
     p "Si, ¡vaya con cuidado entonces!"
 
+    hide i_dev
+
     "Así el hombre de negro, continua su camino, mientras yo me dirijo a la casa del ermitaño."
 
+    hide i_player
+    
     jump scene3

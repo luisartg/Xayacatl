@@ -21,11 +21,11 @@ label scene1:
     Ahora solo queda...
     """
 
-    show i_camp worry at right with dissolve
+    show i_camp worry at right 
 
     c "Señor! Perdone que lo aborde tan de repente, pero le imploro su ayuda, si Dios lo permite en su ser."
 
-    show i_player serious at left with dissolve 
+    show i_player serious at left  
 
     p "Eh… Claro, dígame, en qué puedo servirle."
 
@@ -39,7 +39,7 @@ label scene1:
     ¿Sería posible que solo está jugando por ahí y se le hizo tarde para volver a su casa?
     """
 
-    show i_camp help at right with dissolve
+    show i_camp help 
 
     c """
     No señor, le digo que es verdad, porque Don Bartolo vió al que se lo llevó. 
@@ -64,7 +64,7 @@ label scene1:
     
 label no_help:
 
-    hide i_camp with dissolve
+    hide i_camp 
 
     "El campesino se aleja, un poco triste pero acelera su paso a la búsqueda."
 
@@ -74,7 +74,7 @@ label no_help:
     Vine acá a {b}dejar los problemas atrás.{/b}
     """
 
-    hide i_player with dissolve
+    hide i_player 
 
     """
     Y así, el viajero toma su camino a través de la entrada de Ixtlahuacán. 
@@ -112,13 +112,13 @@ label no_help:
 
 label do_help:
 
-    show i_camp neutral with dissolve
+    show i_camp neutral 
 
     c """
     ¡Dios se lo pague y lo proteja siempre! 
     """
 
-    show i_camp help with dissolve
+    show i_camp help 
     c """
     Por favor señor, ayúdenos yendo al sur de aquí. 
     
@@ -137,7 +137,7 @@ label do_help:
 
     p "Entiendo, entonces voy y vuelvo. Supongo que puedo encontrarlos en el centro del pueblo."
 
-    show i_camp neutral with dissolve
+    show i_camp neutral 
     c "¡Ándele, usted si es requete listo! ¡Dios lo acompañe! Le diré a los demás que usted acaba de llegar, Don.."
 
     $ player_name = renpy.input("Disculpe, ¿Cómo se llama usted?", default="Lemuel", length=20)
@@ -148,8 +148,8 @@ label do_help:
     $ campesino_name = "Juan"
     c "¡Don [campesino_name], pa' servir a usté' y Dios¡ Con su permiso, Don [player_name]."
 
-    hide i_camp with dissolve
-    hide i_player with dissolve
+    hide i_camp 
+    hide i_player 
 
     jump scene2
 

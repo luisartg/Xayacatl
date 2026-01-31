@@ -1,5 +1,6 @@
 label scene5:
     
+
     """
     La oscuridad ya cae sobre los montes y la llanura de Ixtlahuacán. 
     
@@ -44,8 +45,10 @@ label scene5:
     Me armo de valor para pronunciar mis palabras.
     """
 
+    show i_player wary at left
     p "¡Buenas tardes!"
 
+    show i_cha_tam neutral at right
     x2 """
     ¡Noches ya! 
     Ji, ji, ji. 
@@ -60,6 +63,7 @@ label scene5:
 
     "Miro alrededor y observo que no hay nada preparado para alguna celebración."
 
+    show i_player serious
     p "Disculpe mi atrevimiento, pero no veo mucha decoración, ni los ritos acostumbrados de las fiestas."
 
     x2 "¡Oh!"
@@ -79,6 +83,7 @@ label scene5:
 
     Tal vez si alguien pudiera ayudarme, terminaría más rápido para comenzar el jolgorio...
     """
+    show i_player wary
     p "Ya veo… Ehm.. Escuche, se han robado un niño en Ixtlahuacán."
 
     x2 "..."
@@ -104,14 +109,18 @@ label scene5:
 label help_music_man:
     $ x2_help = True
 
+    show i_player think
     p """
     {i}*Suspiro*{/i} 
     
     Está bien, le ayudo entonces.
     """
+    show i_player relax
 
     x2 "Ji, ji, ji! Muchas gracias, buen amigo! Mire, usted sostenga firme esta parte y así…"
 
+    hide i_player
+    hide i_cha_tam
     #ruidos de herramientas
     """
     Durante un rato, ayudé a ese enorme tamborilero. 
@@ -134,6 +143,8 @@ label help_music_man:
     Entonces abrí los ojos y ví que el tamborilero extendía su mano hacia mí para entregarme algo.
     """
 
+    show i_player relax at left
+    show i_cha_tam neutral at right
     x2 "Tome esto, buen hombre."
 
     $ xoco_count += 1
@@ -148,8 +159,11 @@ label help_music_man:
     El niño no está aquí, pero mi hermano del Este, {i}el Cazador{/i}, seguramente podrá decirte dónde está. Toma esta vereda, y pronto llegarás con él.
     """
 
+    hide i_cha_tam
+
     "Comencé entonces a dirigirle hacia el nuevo camino, cuando escucho la voz del tamborilero atrás de mi."
 
+    show i_player serious
     x2 """
     Recuerda [player_name]... 
     
@@ -158,15 +172,19 @@ label help_music_man:
     pero solo debes recordar danzar al ritmo de la vida.
     """
 
+    show i_player think
     p " ...Entiendo. Debo irme entonces. Adiós."
 
+    hide i_player
     jump scene6
 
 
 
 label no_help_music_man:
+
+    show i_player angry
     p """
-    ¡Escuche, hay un niño robado y perdemos el tiempo¡
+    ¡Escuche, hay un niño robado y perdemos el tiempo!
     
     ¡Es obvio que usted oculta algo!
     
@@ -181,12 +199,15 @@ label no_help_music_man:
     Hay gran fuerza dentro de tí, como la del sonido de mi tambor. 
     
     Pero me temo que la fuerza sin ritmo solo es ruido.
-    
+
     ...
 
     Toma la vereda al este. Si la sigues, pronto encontrarás a mi hermano {i}el Cazador{/i}. El podrá guiarte para encontrar al niño.
     """
     
+    show i_player think
     p "Ya veo. Le agradezco entonces. Me retiro ya."
 
+    hide i_player
+    hide i_cha_tam
     jump scene6

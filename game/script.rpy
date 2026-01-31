@@ -14,6 +14,7 @@ image i_player relax = At('lemuel relax', sprite_highlight('player'))
 image i_player happy = At('lemuel happy', sprite_highlight('player'))
 image i_player jumpy = At('lemuel jumpy', sprite_highlight('player'))
 image i_player angry = At('lemuel angry', sprite_highlight('player'))
+image i_player think = At('lemuel think', sprite_highlight('player'))
 
 image i_camp worry = At('camp worry', sprite_highlight('campesino'))
 image i_camp neutral = At('camp neutral', sprite_highlight('campesino'))
@@ -87,7 +88,7 @@ label start:
     #e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
 
     # Finaliza el juego:
-    jump scene1
+    jump scene5
 
 label story_end:
 

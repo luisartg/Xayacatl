@@ -6,8 +6,13 @@ label scene3:
     
     Y sentado en una banca de madera cerca de la ventana de la cabaña, está un hombre viejo.
     """
+
+    show i_player wary at left
+
     p "¡B-Buenas Tardes!"
 
+
+    show i_cha_old neutral at right
     x1 "..."
 
     p """
@@ -38,6 +43,7 @@ label scene3:
     {i}Buen hombre{i}, ¿me ayudaría a terminar de afilar mi Coa?
     """
 
+    show i_player angry
     p "Escuche, la verdad es que no hay tiempo para eso en este momento. Se robaron a un niño y no puedo perder un minuto más aquí."
 
     x1 """
@@ -52,6 +58,7 @@ label scene3:
     Estos rituales son la base de nuestra existencia.
     """
 
+    show i_player wary
     menu:
         "Ayudar al Granjero Anciano":
             jump help_old_man
@@ -63,6 +70,8 @@ label scene3:
 label help_old_man:
 
     $ x1_help = True
+
+    show i_player serious
 
     """
     A pesar de las circunstancias, accedí a ayudar al anciano. 
@@ -96,7 +105,7 @@ label help_old_man:
     
     {b}Pero recuerde mantenerse en el buen camino.{/b}
 
-    El niño se encuentra aún por aquí, pero yo no sé donde se encuentra.
+    El niño se encuentra aún por aquí, pero yo no sé donde con exactitud.
     
     Sin embargo, el peligro aún lo acecha. 
     
@@ -105,15 +114,19 @@ label help_old_man:
     Siga este camino de aquí y llegará muy rápido.
     """
 
+    show i_player think
     p "Entiendo. Bueno, debo retirarme. Adiós."
 
-    jump scene4
+    
+    jump scene3_closure
 
 
 
 label no_help_old_man:
 
+    show i_player angry
     p "Lo siento viejo, no puedo quedarme aquí."
+
 
     x1 """
     Ah… entiendo. 
@@ -124,6 +137,13 @@ label no_help_old_man:
     
     Puede que él sepa algo."""
 
+    show i_player wary
     p "Ya veo. Bueno. Adiós."
+    jump scene3_closure
 
+
+
+label scene3_closure:
+    hide i_cha_old
+    hide i_player 
     jump scene4

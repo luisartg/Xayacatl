@@ -4,6 +4,9 @@ label scene4:
 
     "Avanzando por el camino, observo a lo lejos al Hombre de Negro."
 
+    show i_dev neutral at right
+    show i_player serious at left
+
     if x1_help:
         d """
         Veo que conoció al anciano. 
@@ -53,6 +56,7 @@ label escene4_help_devil:
 
     $ silver_count += 1
 
+    show i_player happy
     p """
     {b}¡Es increíble, realmente es plata!{/b} 
     
@@ -89,4 +93,8 @@ label escene4_closure:
     
     Me retiro, {i}¡suerte en la búsqueda!{/i}
     """
+
+    hide i_dev
+    hide i_player
+
     jump scene5

@@ -15,6 +15,7 @@ image i_player happy = At('lemuel happy', sprite_highlight('player'))
 image i_player jumpy = At('lemuel jumpy', sprite_highlight('player'))
 image i_player angry = At('lemuel angry', sprite_highlight('player'))
 image i_player think = At('lemuel think', sprite_highlight('player'))
+image i_player tired = At('lemuel tired', sprite_highlight('player'))
 
 image i_camp worry = At('camp worry', sprite_highlight('campesino'))
 image i_camp neutral = At('camp neutral', sprite_highlight('campesino'))
@@ -33,6 +34,9 @@ image i_cha_hunt neutral = At('cha3 neutral', sprite_highlight('cha_hunt'))
 
 image i_dev neutral = At('dem neutral', sprite_highlight('devil'))
 image i_dev mad = At('dem mad', sprite_highlight('devil'))
+image i_dev unmasked = At('dem unmask', sprite_highlight('devil'))
+
+image i_izel neutral = At('izel neutral', sprite_highlight('izel'))
 
 
 
@@ -43,15 +47,17 @@ define campesino_name = "Campesino"
 define kid_name = "Niño"
 define devil_name = "Voz"
 
-define p = Character("[player_name]", image='i_player', callback=name_callback, cb_name='player')
-define c = Character("[campesino_name]", image='i_camp', callback=name_callback, cb_name='campesino')
-define m = Character("Doña María", image='i_maria', callback=name_callback, cb_name='maria')
-define n = Character("[kid_name]", image='i_kid', callback=name_callback, cb_name='kid')
-define x1 = Character("Granjero Anciano", image='i_cha_old', callback=name_callback, cb_name='cha_old')
-define x2 = Character("Tamborilero", image='i_cha_tam', callback=name_callback, cb_name='cha_tam')
-define x3 = Character("Cazador", image='i_cha_hunt', callback=name_callback, cb_name='cha_hunt')
-define z = Character("Izel", image='i_izel', callback=name_callback, cb_name='izel')
-define d = Character("[devil_name]", image='i_dev', callback=name_callback, cb_name='devil')
+define p = Character("[player_name]", color="#f3a040", what_color="#f5d3c6", image='i_player', callback=name_callback, cb_name='player')
+define c = Character("[campesino_name]", color="#40c9f3", what_color="#d4e8f5", image='i_camp', callback=name_callback, cb_name='campesino')
+define m = Character("Doña María", color="#f749c2", what_color="#fad0e5", image='i_maria', callback=name_callback, cb_name='maria')
+define n = Character("[kid_name]", color="#e7f340", what_color="#f0f5c6", image='i_kid', callback=name_callback, cb_name='kid')
+define x1 = Character("Granjero Anciano", color="#3ec444", what_color="#c6f5ce", image='i_cha_old', callback=name_callback, cb_name='cha_old')
+define x2 = Character("Tamborilero", color="#8e40f3", what_color="#eac6f5", image='i_cha_tam', callback=name_callback, cb_name='cha_tam')
+define x3 = Character("Cazador", color="#27f092", what_color="#c6f5ed", image='i_cha_hunt', callback=name_callback, cb_name='cha_hunt')
+define z = Character("Izel", color="#db5e0a", what_color="#f5dbc6", image='i_izel', callback=name_callback, cb_name='izel')
+define d = Character("[devil_name]", color="#f33e3e", what_color="#fab9b9", image='i_dev', callback=name_callback, cb_name='devil')
+
+define imp_nar = Character(None,what_color="#9474c7")
 
 #----------------flags------------------------
 default x1_help = False
@@ -88,7 +94,7 @@ label start:
     #e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
 
     # Finaliza el juego:
-    jump scene5
+    jump scene9
 
 label story_end:
 

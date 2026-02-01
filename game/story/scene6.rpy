@@ -1,6 +1,12 @@
 label scene6:
+    #test
+    #$ x2_help = True
+    
     "Caminando ya mas deprisa por la vereda alcanzo a detectar en medio del camino al hombre vestido de negro."
     
+    show i_player relax at left
+    show i_dev neutral at right
+
     if x2_help:
         d """ 
         Se ve muy contento compadre.
@@ -10,8 +16,10 @@ label scene6:
         ¿y con la situación de un niño en peligro?
         """
 
+        show i_player wary
+
         menu:
-            "Estoy haciendo lo mejor que puedo hacer… me adapto al ritmo de esta búsqueda.":
+            "Estoy haciendo lo mejor que puedo hacer… me adapto al ritmo de esta búsqueda.":                
                 d """
                 Pff!! {i}El “Ritmo” {/i}
                 
@@ -54,6 +62,7 @@ label scene6:
 
 
 label escene6_help_devil:
+
     d """
     Ah... 
     
@@ -65,6 +74,8 @@ label escene6_help_devil:
     """
     
     $ silver_count += 1
+
+    show i_player happy
 
     """
     Recibo con manos temblorosas las 10 monedas. 
@@ -85,41 +96,45 @@ label escene6_help_devil:
     
     Pero la riqueza... La riqueza siempre lo soluciona todo, ¿no es así?
     """
-
+    show i_player relax
     jump escene6_closure
 
 
 
 label escene6_no_help_devil:
+
     d """
     {b}{i}¡¿Nada de nuevo?!{/i}{/b} 
     
     Usted no se está tomando esto en serio... {i}\"Compadre\"{/i}.
     """
     
+    "El hombre refunfuñó y resopló."
+
+    show i_dev mad
     """
-    El hombre refunfuñó y resopló.
-    
     Y juro que por un momento vi como sus resoplidos soltaban pequeñas brasas que brillaban como rojas luciérnagas,
     revoloteando en la oscuridad. 
     
     El hombre se recompuso y tomó su actitud usual.
     """
     
+    show i_dev neutral
     d """
     Disculpe.
     
     Me alteré un poco. Ha sido una noche larga. 
     """
+    show i_player wary
     jump escene6_closure
 
 label escene6_closure:
-
     d """
     Presiento que la siguiente será nuestra última parada.
     
     El trato sigue entonces. ¡Leo veo luego, compadre!
     """
+    hide i_dev
 
     """
     Y así como llegó se fue. 
@@ -128,4 +143,6 @@ label escene6_closure:
     
     Fugaz y etéreo. Hasta que simplemente no lo puedo ver más.
     """
+
+    hide i_player
     jump scene7

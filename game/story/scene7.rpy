@@ -34,6 +34,9 @@ label scene7:
     
     Realmente estaba frente a un cazador experimentado.
     """
+    
+    show i_player wary at left
+    show i_cha_hunt neutral at right
 
     p "Buenas noches, disculpe… he venido por guía de sus hermanos, el {i}granjero anciano{/i} y el {i}alegre tamborilero{/i}. Supongo que sabrá que se robaron a un niño."
 
@@ -43,12 +46,16 @@ label scene7:
 
     x3 "Yo lo sé, y a la vez no."
 
+    show i_player angry
+
     p "¿A qué se refiere? ¿Qué clase de juego enfermo está jugando?"
 
     x3 "Yo y mis hermanos nos robamos al niño. Y lo escondimos en un sitio en el pueblo. Nadie podrá encontrarlo. Ni siquiera nosotros mismos."
 
+    show i_player jumpy
     p "¡¿Qué?!"
     
+    show i_player wary
     p "¿Así que siempre fueron ustedes?"
 
     """
@@ -95,9 +102,11 @@ label scene7:
 
 label no_help_hunter: 
     
+    show i_player think
+    p "No..."
+
+    show i_player angry
     p """
-    No.. 
-    
     ¡NO!
     
     No sé qué están haciendo. 
@@ -108,9 +117,10 @@ label no_help_hunter:
     
     Ahora entiendo por qué él les tenía tanto miedo.
     """
-
+    hide i_player
     x3 "¿Que … nos tenía miedo? No me digas que.. ¡NO! ¡NO, ESPERA…!"
 
+    hide i_cha_hunt
     "Pero yo ya no lo escuchaba. Comencé a correr hacia el pueblo."
 
     jump scene8
@@ -120,8 +130,10 @@ label help_hunter:
 
     $ x3_help = True
 
+    show i_player think
     "Dejo mi mente en blanco por un momento."
     
+    show i_player wary
     p "Si les ayudo… ¿Van a devolver al niño con sus padres?"
 
     x3 "Así será."
@@ -130,8 +142,10 @@ label help_hunter:
 
     x3 "Primero... el sacrificio..."
 
+    hide i_player
     "El cazador se voltea dándome la espalda."
 
+    show i_cha_hunt neutral at center
     x3 """
     {b}¡OH, MADRE TIERRA!{/b}
 
@@ -172,7 +186,13 @@ label help_hunter:
     El cazador alzó las manos y puso una sobre la cabeza del tejón y la otra sobre la herida de su sabuesa. 
     
     Una luz cegadora llenó el claro, y cuando me ajusté de nuevo a la oscuridad, ahí estaba la querida perra del cazador. 
-    
+    """
+
+    hide i_cha_hunt
+    pause 1.0
+    show i_izel neutral at center
+
+    """
     Pero ya no era una perra común y corriente: con un cuerpo canino, pero con facciones de tejón, la nueva sabuesa se erguía imponente al lado de su amo.
     
     Y lo que más resaltaba era su larguísima cola, bien podría estar presenciando a un ser mitológico.
@@ -180,11 +200,15 @@ label help_hunter:
 
     x3 "Yo te nombro {i}Izel{/i}, mi querida sabuesa."
 
+    hide i_izel
     """
     Izel lamió con entusiasmo la máscara del Cazador.
 
     Podía notar en el cazador su alegría, pero también su tristeza.
     """
+
+    show i_cha_hunt neutral at right
+    show i_player wary at left
 
     x3 """
     Y ahora, el acto de fe:
@@ -211,5 +235,8 @@ label help_hunter:
     
     Pero rápidamente me volteo y comienzo a correr hacia el pueblo siguiendo a la sabuesa Izel.
     """
+
+    hide i_cha_hunt
+    hide i_player
 
     jump scene8

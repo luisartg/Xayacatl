@@ -76,7 +76,7 @@ label no_help:
 
     hide i_player 
 
-    """
+    imp_narr """
     Y así, el viajero toma su camino a través de la entrada de Ixtlahuacán. 
     
     Pero algo extraño comienza a suceder. 

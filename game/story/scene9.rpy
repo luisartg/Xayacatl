@@ -1,4 +1,5 @@
 label scene9:
+
     """
     Me encuentro corriendo, como nunca he corrido en mi vida. 
     
@@ -9,8 +10,10 @@ label scene9:
     Es como si el aire fuera diferente. Una ligera neblina cubre todo el pueblo.
     """
 
+    show i_izel neutral at right
     z "GRRRRR ... ¡¡WRAFF WRAFF!!"
 
+    show i_player wary at left
     p "¿Qué pasa, amiga?"
 
     """

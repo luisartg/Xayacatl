@@ -23,13 +23,13 @@ label scene1:
 
     show i_camp worry at right 
 
-    c "Señor! Perdone que lo aborde tan de repente, pero le imploro su ayuda, si Dios lo permite en su ser."
+    c "¡Señor! Perdone que lo aborde tan de repente, pero le imploro su ayuda, si Dios lo permite en su ser."
 
     show i_player serious at left  
 
     p "Eh… Claro, dígame, en qué puedo servirle."
 
-    c "Se han robado al niño de Doña María!"
+    c "¡Se han robado al niño de Doña María!"
 
     p """
     {i}Ahí va mi vida libre de problemas.{/i}
@@ -76,7 +76,7 @@ label no_help:
 
     hide i_player 
 
-    imp_narr """
+    imp_nar """
     Y así, el viajero toma su camino a través de la entrada de Ixtlahuacán. 
     
     Pero algo extraño comienza a suceder. 
@@ -107,6 +107,8 @@ label no_help:
     
     Pero en verdad fue la última persona que vió a aquel viajero partir a lugares más allá de nuestra comprensión terrenal.
     """
+
+    centered "FIN"
 
     jump story_end
 

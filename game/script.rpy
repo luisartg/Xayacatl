@@ -97,7 +97,7 @@ label start:
     #e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
 
     # Finaliza el juego:
-    jump scene9
+    jump scene1
 
 label story_end:
 

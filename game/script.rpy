@@ -16,6 +16,8 @@ image i_player jumpy = At('lemuel jumpy', sprite_highlight('player'))
 image i_player angry = At('lemuel angry', sprite_highlight('player'))
 image i_player think = At('lemuel think', sprite_highlight('player'))
 image i_player tired = At('lemuel tired', sprite_highlight('player'))
+image i_player pray = At('lemuel pray', sprite_highlight('player'))
+image i_player final = At('lemuel final', sprite_highlight('player'))
 
 image i_camp worry = At('camp worry', sprite_highlight('campesino'))
 image i_camp neutral = At('camp neutral', sprite_highlight('campesino'))
@@ -23,8 +25,9 @@ image i_camp help = At('camp help', sprite_highlight('campesino'))
 
 image i_maria happy = At('maria happy', sprite_highlight('maria'))
 
-image i_kid happy = At('kid happy', sprite_highlight('kid'))
-image i_kid scared = At('kid scared', sprite_highlight('kid'))
+image i_kid happy = At('chuy happy', sprite_highlight('kid'))
+image i_kid scared = At('chuy scared', sprite_highlight('kid'))
+image i_kid left = At('chuy left', sprite_highlight('kid'))
 
 image i_cha_old neutral = At('cha1 neutral', sprite_highlight('cha_old'))
 

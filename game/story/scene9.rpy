@@ -16,6 +16,9 @@ label scene9:
     show i_player wary at left
     p "¿Qué pasa, amiga?"
 
+    hide i_izel
+    hide i_player
+
     """
     Levanto la mirada, y allí lo veo. 
     
@@ -28,7 +31,9 @@ label scene9:
     Pero su rostro. 
     
     Su rostro ya no es humano. 
-    
+    """
+    show i_dev unmasked at right
+    """
     Es un monstruo, una bestia antinatural. 
     
     Con tatuajes brillando rojo vivo como brasas y una piel negra cual carbón, se presenta ante mí finalmente, sin máscaras.
@@ -50,10 +55,11 @@ label scene9:
     El demonio aquél vociferaba mientras gritaba y lanzaba saliva con cada palabra rabiosa.
     """
 
+    show i_player wary at left
     p """
     Los problemas no parecen alejarse nunca. 
     
-    Así que solo debo seguir danzando con la vida, no cree, “compadre”?
+    Así que solo debo seguir danzando con la vida, ¿no cree... “compadre”?
     """
 
     d """
@@ -70,6 +76,7 @@ label scene9:
     ¡¡ESTÁ SOLO EN ESTO, COMPADRE!!
     """
     
+    show i_player angry
     p """
     Tal vez, pero aún así no tendrá al niño. 
     Lo juro por mi vida.
@@ -77,6 +84,8 @@ label scene9:
 
     d "¡ENTONCES POR SU VIDA SERÁ!"
 
+    hide i_player
+    hide i_dev
     """
     El demonio se lanzó con una velocidad de rayo hacia mi.
     
@@ -89,30 +98,40 @@ label scene9:
     Frente a mi se encontraban los tres ermitaños que en ese momento llegaron acudiendo a mi ayuda.
     """
     
+    show i_cha_tam neutral at right
     x2 "¡Ji, ji ,ji ,ji! lamentamos el retraso."
 
     "Me dice el tamborilero mientras brincotea alegremente."
 
     x2 "Nos tomó un poco atravesar esa barrera de neblina."
 
-    x1 "¡Eh je, je! ¡Parece que tendremos un segundo round!"
+    hide i_cha_tam
+    show i_cha_old neutral at right
+    x1 "¡Eh je, je! ¡Parece que tendremos otra oportunidad para luchar!"
 
     "El anciano se endereza y estira mientras le truena un poco la espalda."
 
+    hide i_cha_old 
+    show i_cha_hunt neutral at right
+
+    x3 "Hagamos que cuente entonces."
+
+    show i_player wary at left
     x3 """
-    Hagamos que cuente entonces. [player_name] ya no somos lo que éramos. 
+    [player_name] ya no somos lo que éramos. 
     
     El tiempo a pasado, y ya no podemos vencer.
     
-    Es muy probable, que esta sea nuestra última batalla. 
+    Es muy probable... que esta sea nuestra última batalla. 
     
     Toda nuestra fe está contigo.
     
     Encuentra al niño y llévatelo; corran hasta que el sol salga y sus rayos toquen al pueblo.
 
-    Solo necesitan resistir.
+    {b}{i}Solo necesitan resistir{/i}{/b}.
     """
-
+    hide i_cha_hunt
+    hide i_player
     """
     No hubo mucho tiempo para decir más.
     
@@ -128,8 +147,10 @@ label scene9:
     De no haber tenido ya una misión, estaría viendo más de aquella batalla.
     """
 
+    show i_player angry at left
     p "¡Izel, llevame al niño ya! ¡No tardes o podemos perderlo!"
 
+    show i_izel neutral at right
     z "Wrrr raff!"
 
     "Corrimos rápido entre los árboles del jardín central y llegamos a un arbol muy viejo y con muchas ramas, justo al centro del jardín."
@@ -138,12 +159,15 @@ label scene9:
 
     p "No puedo ver nada, pero debe estar aquí."
 
+    hide i_izel
+    
     """
     Después de pensarlo un poco, dejé de pensar y comencé a sentir.
     
     Cerré los ojos y comencé a escuchar a la tierra.
     """
-    
+
+    show i_player pray
     p "¡Oh Madre Tierra, guía mis sentidos. Permíteme ver lo oculto."
 
     """
@@ -153,9 +177,9 @@ label scene9:
     
     Me inclino y le hablo.
     """
-
+    show i_player relax
     p "Hola pequeño ¿a qué juegas?"
-
+    show i_kid happy at right
     n "Estoy jugando a vencer al hombre malo."
 
     p "Ah ese es un juego muy divertido. ¿Cómo llegaste aquí?"
@@ -176,12 +200,15 @@ label scene9:
 
     n "Me dicen Chuy."
 
+    show i_player wary
     p "Escucha Chuy, el poder que te mantiene oculto del hombre malo ya casi se acaba, puedo verlo. Debemos seguir corriendo hasta que amanezca."
 
     d "{b}¡MUY TARDE PARA ESO!{/b}"
 
+    show i_kid scared
     n "Aaaaah!!"
     
+    hide i_kid
     p "Oh no!"
 
     """
@@ -191,7 +218,7 @@ label scene9:
 
     Sus cuerpos comenzaron a disiparse como polvo al aire. 
     """
-
+    show i_dev unmasked at right
     d """
     JA JA JA! 
     
@@ -201,6 +228,9 @@ label scene9:
     
     Y EL SIGUIENTE AÑO VOLVERÉ MAS FUERTE Y YA NO HABRÁ NADIE QUE ME DETENGA.
     """
+
+    hide i_dev
+    hide i_player
 
     """
     El demonio se lanzo en un ataque final hacia mí. De forma instintiva me volteé hacia el niño y lo cubrí.
@@ -224,6 +254,10 @@ label scene9:
     Y una corona adornaba mi cabeza.
     """
 
+    show i_player final at left
+    p "..."
+
+    show i_dev unmasked at right
     d """
     No...
     
@@ -252,6 +286,7 @@ label scene9:
 
     d "s - s... s..omos muchos... nunca... acabarás... con nosotros -aggh!!- ..."
 
+    hide i_dev
     "Y así el demonio empezó a desintegrarse."
 
     p "No importa. Estaré aquí siempre, como lo he estado por mucho tiempo..."
@@ -268,18 +303,21 @@ label scene9:
     Gracias.
     """
 
+    hide i_player
     """
     El sol comienza a brillar sobre Ixtlahuacán y la neblina se ha disipado por completo. 
     
     Escucho los gritos de alegría de los pobladores.
     """
-
+    show i_maria happy at right
     m "¡Hijito!! ¡Ay Gracias, Gracias a Dios estás bien!"
-
+    show i_kid left at left
     n "¡Mami! ¡Mami! El Señor de la Máscara me salvó del hombre malo que me quería llevar."
-
+    hide i_kid
     m "¡Gracias Señor!... ¿C-Cuál es su nombre? ¿Quién es usted?"
-    
+    hide i_maria
+
+    show i_player final
     """
     ¿Quien soy yo?
     
@@ -288,6 +326,7 @@ label scene9:
     Y respondí:
     """
 
+    hide i_player
     p """
     Mi máscara soy yo.
     
@@ -296,6 +335,6 @@ label scene9:
     Soy un Chayacate.
     """
 
-    "FIN"
+    centered "FIN"
 
     jump story_end
